@@ -18,13 +18,27 @@
             <label for="capitale">Capitale</label>
             <input type="radio" id="nom" name="drone" value="nom">
             <label for="nom">Nom de pays</label>
+            <input type="radio" id="region" name="drone" value="region">
+            <label for="region">Region</label><br>
         </form>
+        <label for="regionChoice">Choose a region:</label>
+        <input list="regionList" id="regionChoice" name="regionChoice" />
+        <datalist id="regionList">
+            <option value="Americas">
+            <option value="Europe">
+            <option value="Africa">
+            <option value="Oceania">
+            <option value="Asia">
+        </datalist>
         <button id="searchData">Search</button>
         <button id="btnShowData">Show Data</button>
         <div id="searchResult"></div>
         <ul id="showData">
 
         </ul>
+
+
+
     </body>
 
 </html>
