@@ -33,12 +33,10 @@ APP.get("/capital/:capital", (req, res) => {
 })
 
 APP.get("/region/:region", (req, res) => {
-    for (i = 0; i < COUNTRIES_DATA.length; i++) {
         let result = COUNTRIES_DATA.filter((country) => req.params.region.toUpperCase() === country.region.toUpperCase())
         res.json({
             data: result
         })
-    }
 })
 
 

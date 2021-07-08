@@ -44,7 +44,7 @@ async function search() {
         const resJSON = await res.json()
         console.log(resJSON.data);
         for (i = 0; i < resJSON.data.length; i++) {
-        $("#searchResult").append(`
+            $("#searchResult").append(`
                 <li> Nom du pays : ${resJSON.data[i].name}</li>
                 <li>Appartenant à la région : ${resJSON.data[i].region} </li>
                 <li>Capital : ${resJSON.data[i].capital}</li><br>
@@ -55,8 +55,15 @@ async function search() {
     }
 }
 
+function reset() {
+    $("#showData").empty(); /* Supprime le résultat de la fonction getAllCountries */
+    $("#searchResult").empty();
+    $('#btnShowData').prop('disabled', false);
+}
+
 $(document).ready(() => {
     $("#searchData").click(search)
+    $("#reset").click(reset)
 })
 
 getAllCountries();
