@@ -20,6 +20,18 @@ APP.get("/:country", (req, res) => {
     }
 })
 
+APP.get("/capital/:capital", (req, res) => {
+    for (i = 0; i < COUNTRIES_DATA.length; i++) {
+        if (req.params.capital.toUpperCase() === COUNTRIES_DATA[i].capital.toUpperCase()) {
+            res.json({
+                Capital : COUNTRIES_DATA[i].capital,
+                Region : COUNTRIES_DATA[i].region,
+                Name : COUNTRIES_DATA[i].name
+            });
+        }
+    }
+})
+
 APP.listen(PORT, () => {
     console.log("Test !")
 })
